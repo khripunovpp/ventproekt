@@ -48,6 +48,27 @@ var pricelistSlider = function() {
     });
 }
 
+// $slick_slider = $('.slider');
+// settings = {
+// // some settings
+// }
+// $slick_slider.slick(settings);
+
+// // reslick only if it's not slick()
+// $(window).on('resize', function() {
+// if ($(window).width() < 768) {
+//   if ($slick_slider.hasClass('slick-initialized')) {
+//     $slick_slider.slick('unslick');
+//   }
+//   return
+// }
+
+// if (!$slick_slider.hasClass('slick-initialized')) {
+//   return $slick_slider.slick(settings);
+// }
+// });
+
+
 $(function() {
 pricelistSlider()
 });
