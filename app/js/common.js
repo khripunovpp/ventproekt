@@ -13,14 +13,33 @@ var Util = {
 }
 
 var pricelistSlider = function() {
-    var mainSlider = $(".pricelist__prices"),
-        thumbs = $('.pricelist__categories');
+    var tab = $('.pricelist__tab')
 
-    mainSlider.slick({
+    tab.on('click', function(event) {
+        event.preventDefault();
+        var that = $(this),
+            tabActive = $('.pricelist__tab.active'),
+            contentActive = $('.pricelist__prices.active');;
+
+        if (!that.hasClass('active')) {
+            that.addClass('active')
+            tabActive.removeClass('active')
+
+            contentActive.hide().removeClass('active')
+            that.next(".pricelist__prices").show().addClass('active')
+        }
+
+    });
+}
+
+var placesSlider = function() {
+    var slider = $(".places__list");
+
+    settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        asNavFor: thumbs,
+         dots: true,
         infinite: false,
         responsive: [{
             breakpoint: 1131,
@@ -28,47 +47,103 @@ var pricelistSlider = function() {
                 dots: true
             }
         }]
+    }
+
+    slider.slick(settings);
+
+    if ($(window).width() > 991) _unslick()
+
+    // reslick only if it's not slick()
+    $(window).on('resize', function() {
+        if ($(window).width() > 991) _unslick()
+
+        if (!slider.hasClass('slick-initialized')) {
+            return slider.slick(settings);
+        }
     });
 
-    thumbs.slick({
-        slidesToShow: 4,
+    function _unslick() {
+        if (slider.hasClass('slick-initialized')) {
+            slider.slick('unslick');
+        }
+        return
+    }
+}
+
+
+var picsSlider = function() {
+    var slider = $(".pics__list");
+
+    settings = {
+        slidesToShow: 1,
         slidesToScroll: 1,
-        asNavFor: mainSlider,
-        dots: false,
-        focusOnSelect: true,
         arrows: false,
+         dots: true,
         infinite: false,
         responsive: [{
-            breakpoint: 992,
+            breakpoint: 1131,
             settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5
+                dots: true
             }
         }]
+    }
+
+    slider.slick(settings);
+
+    if ($(window).width() > 991) _unslick()
+
+    // reslick only if it's not slick()
+    $(window).on('resize', function() {
+        if ($(window).width() > 991) _unslick()
+
+        if (!slider.hasClass('slick-initialized')) {
+            return slider.slick(settings);
+        }
+    });
+
+    function _unslick() {
+        if (slider.hasClass('slick-initialized')) {
+            slider.slick('unslick');
+        }
+        return
+    }
+}
+
+
+
+var menu = function() {
+    $('.js-menuToggle').click(function() {
+        $(this).toggleClass('open');
+        $('.menu').slideToggle()
     });
 }
 
-// $slick_slider = $('.slider');
-// settings = {
-// // some settings
-// }
-// $slick_slider.slick(settings);
 
-// // reslick only if it's not slick()
-// $(window).on('resize', function() {
-// if ($(window).width() < 768) {
-//   if ($slick_slider.hasClass('slick-initialized')) {
-//     $slick_slider.slick('unslick');
-//   }
-//   return
-// }
+var popup = function() {
+    var popup = '.popup'
 
-// if (!$slick_slider.hasClass('slick-initialized')) {
-//   return $slick_slider.slick(settings);
-// }
-// });
+    $('.js-modal').on('click', function(event) {
+        event.preventDefault();
+        $(popup).fadeIn();
+    });
+
+    $('.popup__close').on('click', function(event) {
+        event.preventDefault();
+        $(this).closest(popup).fadeOut();
+    });
+
+    $('.response__close').on('click', function(event) {
+        event.preventDefault();
+        $(popup).fadeOut();
+        $('.response').fadeOut();
+    });
+}
 
 
 $(function() {
-pricelistSlider()
+    pricelistSlider()
+    menu()
+    popup()
+    placesSlider()
+    picsSlider()
 });

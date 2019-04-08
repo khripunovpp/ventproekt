@@ -80,6 +80,7 @@ select
 	overflow: hidden
 
 .bage
+	text-align: center
 	font-size: 14px
 	font-weight: 700
 	text-transform: uppercase
@@ -158,10 +159,10 @@ select
 		border-bottom: 1px solid #abb9eb
 	&__nav
 		@extend %container
+	&__burger
+		display: none
 
 .menu
-	&__button
-		display: none
 	&__footer
 		display: none
 	&__list
@@ -179,6 +180,8 @@ select
 		text-decoration: none
 		&--highlight
 			color: #3293ff
+		&:hover
+			text-decoration: underline
 
 
 .hero
@@ -415,38 +418,43 @@ select
 		font-family:  $font1_600
 		font-weight: 500
 	&__categories
-		& .slick-track
-			display: flex
-			justify-content: space-between
-		&-item
-			flex-basis: 270px
-			font-size: 22px
-			color: #14244d
-			line-height: 1.2
-			position: relative
-			padding-bottom: 15px
-			opacity: .5
-			cursor: pointer
-			margin: 0
-			&::after
-				content: ''
-				width: 50px
-				height: 4px
-				background-color: #5d75d7
-				position: absolute
-				bottom: 0
-				left: 0
-			&.slick-current,
-			&:hover
-				opacity: 1
+		overflow: auto
+	&__tab
+		font-size: 18px
+		color: #14244d
+		line-height: 1.2
+		position: relative
+		padding-bottom: 10px
+		opacity: .5
+		cursor: pointer
+		margin: 0
+		display: inline-block
+		float: left
+		min-height: 52px
+		overflow: hidden
+		margin-right: 15px
+		&::after
+			content: ''
+			width: 50px
+			height: 4px
+			background-color: #5d75d7
+			position: absolute
+			bottom: 0
+			left: 0
+		&.active,
+		&:hover
+			opacity: 1
 	&__prices
-		&-section
-			float: left
-		&-wrapper
-			display: flex
-			flex-wrap: wrap
-			justify-content: space-between
-			align-items: flex-start
+		display: none
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: flex-start
+		float: right
+		width: 100%
+		margin-left: -100%
+		margin-top: 52px
+		&.active
+			display: flex !important
 		&-item
 			flex-basis: 270px
 			border: 1px solid #c5d4e7
@@ -578,6 +586,8 @@ select
 		font-weight: 700
 		&:hover
 			color: #14244d
+	&__form
+		display: none
 
 
 .scheme
@@ -677,6 +687,7 @@ select
 		font-size: 20px
 		color: #737373
 		line-height: 1.5
+		margin: 0
 		img
 			float: right
 			margin-left: 35px
@@ -771,6 +782,8 @@ select
 		left: 0
 		width: 100%
 		height: 100%
+	&__form
+		display: none
 
 .footer
 	background-color: #14244d
@@ -790,6 +803,148 @@ select
 			color: #fff
 			a
 				color: #fff
+
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 8
+	overflow: auto
+	background-color: rgba(0, 0, 0, 0.5)
+	display: none
+	text-align: left
+	&__wrapper
+		height: 100%
+		width: 100%
+	&__inner
+		vertical-align: middle
+		padding: 15px
+	&__box
+		background-color: #14244d
+		width: 100%
+		max-width: 570px
+		position: relative
+		overflow: hidden
+		margin: 0 auto
+		padding: 45px
+		box-shadow: 0 0 50px rgba(0,0,0,.5)
+	&__close
+		position: absolute
+		top: 15px
+		right: 15px
+		width: 20px
+		height: 20px
+		padding: 0
+		border: none
+		background-color: transparent
+		background-image: url(../img/icon-close-popup.png)
+		cursor: pointer
+	.form
+		max-width: 380px
+		margin: 0 auto
+		&__title
+			font-size: 18px
+			font-weight: 400
+		&__btn
+			font-weight: 500
+
+.response
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 8
+	overflow: auto
+	background-color: rgba(0, 0, 0, 0.5)
+	display: none
+	&__wrapper
+		height: 100%
+		width: 100%
+	&__inner
+		vertical-align: middle
+		padding: 15px
+	&__box
+		background-color: #fff
+		width: 100%
+		max-width: 570px
+		position: relative
+		overflow: hidden
+		margin: 0 auto
+		padding: 45px
+		box-shadow: 0 0 50px rgba(0,0,0,.5)
+		text-align: center
+	&__close
+		position: absolute
+		top: 15px
+		right: 15px
+		width: 20px
+		height: 20px
+		padding: 0
+		border: none
+		background-color: transparent
+		background-image: url(../img/icon-close-response.png)
+		cursor: pointer
+	&__title
+		font-size: 30px
+		margin: 0 0 20px
+		color: #14244d
+	&__text
+		font-size: 18px
+		color: #737373
+		margin: 0
+
+.pics
+	padding: 60px 0
+	&__title
+		font-size: 30px
+		font-weight: 700
+		color: #14244d
+		margin: 0 0 20px
+		position: relative
+		padding-bottom: 30px
+		line-height: 1.3
+		&::after
+			content: ''
+			width: 70px
+			height: 8px
+			background-color: #5d75d7
+			position: absolute
+			bottom: 0
+			left: 0
+	&__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	&__item
+		float: left
+		display: block
+		margin: 30px 0 0
+		flex-grow: 0
+		&:nth-child(1)
+			max-width: 370px
+		&:nth-child(2)
+			max-width: 270px
+			max-height: 200px
+		&:nth-child(3)
+			max-width: 170px
+		&:nth-child(4)
+			max-width: 270px
+		&:nth-child(5),
+		&:nth-child(6)
+			max-width: 170px
+		&:nth-child(7)
+			max-width: 270px
+			margin-top: -55px
+		&:nth-child(8)
+			max-width: 270px
+		&:nth-child(9)
+			max-width: 170px
+
+
+
 
 
 

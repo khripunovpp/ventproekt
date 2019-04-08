@@ -26,13 +26,13 @@ html
 							img.logo(src="img/logo.png", alt="")
 						.header__middle
 							span.bage.bage--invert Официальная гарантия
-							button.bage Позвоните мне
+							button.bage.js-modal Позвоните мне
 						.header__phone
 							.phone Без выходных
 								a(href="tel:+74953749832") +7 (495) 374-98-32
 				.header__nav
+					button.header__burger.js-menuToggle
 					.menu
-						button.menu__button
 						nav.menu__list
 							a.menu__item(href="") О компании
 							a.menu__item(href="") Преимущества
@@ -42,7 +42,7 @@ html
 							a.menu__item.menu__item--highlight(href="") Контакты
 						.menu__footer
 							span.bage.bage--invert Официальная гарантия
-							a.bage(href="") Позвоните мне
+							button.bage.js-modal Позвоните мне
 
 
 			section.hero
@@ -53,7 +53,7 @@ html
 							p.hero__subtitle Гарантия до 5-х лет на монтаж и обслуживание#[br] всех инженерных систем.
 							p.hero__price Цены на услуги #[strong от 350 &#8381;/м2]
 							.hero__footer
-								button.hero__button.btn Заказать
+								button.hero__button.btn.js-modal Заказать
 								a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
 						.hero__right
 							p.hero__step #[i 1] Сделаем проект#[br] БЕСПЛАТНО
@@ -81,180 +81,285 @@ html
 					p.guarantees__promo #[strong Гарантия до 60 мес.] Сделаем бесплатно понятную и развернутую смету за 24 часа!
 
 		
-		section.places
-			.container
-				.places__inner
-					h2.places__title Осуществляем монтаж вентиляции под ключ на любых объектах, от квартиры до промышленного предприятия
-					.places__slider
-						ul.places__list
-							li.places__item
-								img.places__item-img(src="img/places-img-1.jpg", alt="")
-								p.places__item-text Торговые и административные#[br] здания и помещения
-							li.places__item
-								img.places__item-img(src="img/places-img-2.jpg", alt="")
-								p.places__item-text Промышленные#[br] объекты
-							li.places__item
-								img.places__item-img(src="img/places-img-3.jpg", alt="")
-								p.places__item-text Объекты#[br] специального назначения
-							li.places__item
-								img.places__item-img(src="img/places-img-4.jpg", alt="")
-								p.places__item-text Спортивно-оздоровительные комплексы
-							li.places__item
-								img.places__item-img(src="img/places-img-5.jpg", alt="")
-								p.places__item-text Объекты#[br] здравоохранения
-							li.places__item
-								img.places__item-img(src="img/places-img-6.jpg", alt="")
-								p.places__item-text Предприятия общественного#[br] питания
-							li.places__item
-								img.places__item-img(src="img/places-img-7.jpg", alt="")
-								p.places__item-text Гостиничный#[br] бизнес
-							li.places__item
-								img.places__item-img(src="img/places-img-8.jpg", alt="")
-								p.places__item-text Объекты культуры#[br] и образования
-							li.places__item
-								img.places__item-img(src="img/places-img-9.jpg", alt="")
-								p.places__item-text Частные#[br] объекты
+			section.places
+				.container
+					.places__inner
+						h2.places__title Осуществляем монтаж вентиляции под ключ на любых объектах, от квартиры до промышленного предприятия
+						.places__slider
+							ul.places__list
+								li.places__item
+									img.places__item-img(src="img/places-img-1.jpg", alt="")
+									p.places__item-text Торговые и административные#[br] здания и помещения
+								li.places__item
+									img.places__item-img(src="img/places-img-2.jpg", alt="")
+									p.places__item-text Промышленные#[br] объекты
+								li.places__item
+									img.places__item-img(src="img/places-img-3.jpg", alt="")
+									p.places__item-text Объекты#[br] специального назначения
+								li.places__item
+									img.places__item-img(src="img/places-img-4.jpg", alt="")
+									p.places__item-text Спортивно-оздоровительные комплексы
+								li.places__item
+									img.places__item-img(src="img/places-img-5.jpg", alt="")
+									p.places__item-text Объекты#[br] здравоохранения
+								li.places__item
+									img.places__item-img(src="img/places-img-6.jpg", alt="")
+									p.places__item-text Предприятия общественного#[br] питания
+								li.places__item
+									img.places__item-img(src="img/places-img-7.jpg", alt="")
+									p.places__item-text Гостиничный#[br] бизнес
+								li.places__item
+									img.places__item-img(src="img/places-img-8.jpg", alt="")
+									p.places__item-text Объекты культуры#[br] и образования
+								li.places__item
+									img.places__item-img(src="img/places-img-9.jpg", alt="")
+									p.places__item-text Частные#[br] объекты
 
 
 
 
 
-		section.pricelist
-			.container
-				.pricelist__inner
-					h2.pricelist__title Цены на услуги
-					p.pricelist__disclamer Цены указаны без учета стоимости деталей
-					.pricelist__categories
-						p.pricelist__categories-item Монтаж систем#[br] вентиляции
-						p.pricelist__categories-item Монтаж систем#[br] кондиционирования
-						p.pricelist__categories-item Монтаж систем#[br] холодоснабжения
-						p.pricelist__categories-item Монтаж систем#[br] дымоудаления
-					.pricelist__prices
-						.pricelist__prices-section
-							.pricelist__prices-wrapper
+			section.pricelist
+				.container
+					.pricelist__inner
+						h2.pricelist__title Цены на услуги
+						p.pricelist__disclamer Цены указаны без учета стоимости деталей
+						.pricelist__categories
+							p.pricelist__tab(data-tab-id=1).active Монтаж систем#[br] вентиляции
+							.pricelist__prices(data-content-id=1).active
 								.pricelist__prices-item
 									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-price от 490 ₽/м2
+								.pricelist__prices-item
+									p.pricelist__prices-name Вентиляторы
+									p.pricelist__prices-price от 4 500 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Шумоглушители
+									p.pricelist__prices-price от 980 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Приточная установка
+									p.pricelist__prices-price от 14 900 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Теплоизоляция
+									p.pricelist__prices-price от 150 ₽/м2
+							p.pricelist__tab(data-tab-id=2) Монтаж систем#[br] кондиционирования
+							.pricelist__prices(data-content-id=2)
+								.pricelist__prices-item
+									p.pricelist__prices-name Кондиционер
+									p.pricelist__prices-price от 8 900 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Дренажная помпа
+									p.pricelist__prices-price от 1 580 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Канальный кондиционер
+									p.pricelist__prices-price от 9 870 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name VRV система
+									p.pricelist__prices-price от 27 800 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Опрессовка азотом
+									p.pricelist__prices-price от 7 500 ₽
+							p.pricelist__tab(data-tab-id=3) Монтаж систем#[br] холодоснабжения
+							.pricelist__prices(data-content-id=3)
+								.pricelist__prices-item
+									p.pricelist__prices-name Чиллер
+									p.pricelist__prices-price от 87 340 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Фанкойл
+									p.pricelist__prices-price от 7 580 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name Трубопровод
+									p.pricelist__prices-price от 210 ₽/м.п.
+								.pricelist__prices-item
+									p.pricelist__prices-name Узел обвязки
+									p.pricelist__prices-price от 5 370 ₽
+								.pricelist__prices-item
+									p.pricelist__prices-name ПУльт управления
+									p.pricelist__prices-price от 1 430 ₽
+							p.pricelist__tab(data-tab-id=4) Монтаж систем#[br] дымоудаления
+							.pricelist__prices(data-content-id=4)
 								.pricelist__prices-item
 									p.pricelist__prices-name Воздуховоды
+									p.pricelist__prices-price от 750 ₽/м2
+								.pricelist__prices-item
+									p.pricelist__prices-name Огнезащита
 									p.pricelist__prices-price от 350 ₽/м2
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Вентилятор
+									p.pricelist__prices-price от 18 340 ₽
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Клапан дымоудаления
+									p.pricelist__prices-price от 3 240 ₽
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
-						.pricelist__prices-section
-							.pricelist__prices-wrapper
+									p.pricelist__prices-name Щит управления
+									p.pricelist__prices-price от 9 370 ₽
+							p.pricelist__tab(data-tab-id=5) Автоматизация#[br] и диспетчерезация
+							.pricelist__prices(data-content-id=5)
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Прокладка кабеля
+									p.pricelist__prices-price от 18 ₽/м.п.
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Установка лотка
+									p.pricelist__prices-price от 210 ₽
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Сборка щита
+									p.pricelist__prices-price от 14 730 ₽
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Установка датчика
+									p.pricelist__prices-price от 470 ₽
 								.pricelist__prices-item
-									p.pricelist__prices-name Воздуховоды
-									p.pricelist__prices-price от 350 ₽/м2
+									p.pricelist__prices-name Пусконаладочные работы
+									p.pricelist__prices-price от 8 720 ₽
+							p.pricelist__tab(data-tab-id=6) Алмазное бурение#[br] отверстий
+							.pricelist__prices(data-content-id=6)
+								.pricelist__prices-item
+									p.pricelist__prices-name В кирпиче
+									p.pricelist__prices-price от 14 ₽/см
+								.pricelist__prices-item
+									p.pricelist__prices-name В бетоне
+									p.pricelist__prices-price от 18 ₽/см
+								.pricelist__prices-item
+									p.pricelist__prices-name В армированном бетоне
+									p.pricelist__prices-price от 20 ₽/см
 
-		
-		section.promo
-			.container
-				.promo__inner
-					p.promo__text Узнайте стоимость#[br] монтажа
-					form.promo__form
-						input.promo__field(type="tel", placeholder="Телефон", required)
-						button.promo__btn Узнать
-
-		section.call
-			.container
-				.call__inner
-					p.call__text Убедитесь в нашей#[br] экспертности лично
-					a(href="tel:+74953749832").call__phone +7 (495) 374-98-32
-
-		section.scheme
-			.container
-				.scheme__inner
-					h2.scheme__title Рабочий алгоритм
-					ul.scheme__list
-						li.scheme__item #[strong 1] Вы связываетесь с нами по телефону 8-495-374-98-32
-						li.scheme__item #[strong 2] Наши специалисты выезжают к Вам на объекты
-						li.scheme__item #[strong 3] Согласовываем условия выполнения работ
-						li.scheme__item #[strong 4] Заключаем с Вами договор
-						li.scheme__item #[strong 5] Мы выполняем работы в сроки, прописанные в договоре
-						li.scheme__item #[strong 6] Сдаем работы Вы довольны
-
-		section.questions
-			.container
-				.questions__inner
-					p.questions__text #[strong Остались вопросы?] Позвоните нам и мы ответим#[br] на все ваши вопросы
-					a(href="tel:+74953749832").questions__phone +7 (495) 374-98-32
+			
+			section.promo
+				.container
+					.promo__inner
+						p.promo__text Узнайте стоимость#[br] монтажа
+						form.promo__form
+							input.promo__field(type="tel", placeholder="Телефон", required)
+							button.promo__btn Узнать
 
 
-		section.clients
-			.container
-				.clients__inner
-					h2.clients__title Наши клиенты
-					.clients__list
-						img.clients__item(src="img/clients-logo-1.jpg", alt="")
-						img.clients__item(src="img/clients-logo-2.jpg", alt="")
-						img.clients__item(src="img/clients-logo-3.jpg", alt="")
-						img.clients__item(src="img/clients-logo-4.jpg", alt="")
-						br
-						img.clients__item(src="img/clients-logo-5.jpg", alt="")
-						img.clients__item(src="img/clients-logo-6.jpg", alt="")
-						img.clients__item(src="img/clients-logo-7.jpg", alt="")
-						img.clients__item(src="img/clients-logo-8.jpg", alt="")
+			section.pics
+				.container
+					.pics__inner
+						h2.pics__title Наши работы
+						.pics__slider
+							.pics__list
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
+								img.pics__item(src="img/pic-1.jpg", alt="")
 
-		section.seo
-			.container
-				.seo__inner
-					h2.seo__title Наши клиенты
-					p.seo__text #[img(src="img/seo-img.jpg", alt="")] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, voluptatum illo repellendus est facilis amet laboriosam suscipit dolore, modi rerum minima nobis eum dolorem voluptas similique recusandae aliquid assumenda ut fuga dolores voluptate soluta ex, cupiditate. Fuga et voluptatum aspernatur ratione earum fugiat accusantium tenetur id expedita hic aperiam, modi alias non vel ut ab maxime quis. Et incidunt reprehenderit, aut blanditiis amet, explicabo voluptas eum dolorum qui quo vitae earum quibusdam! Ea libero, aliquam amet. Est nemo commodi dolorem rem harum itaque nihil soluta autem, culpa eaque praesentium qui ad dicta, quia sed. Consequuntur minus, earum illo repellat enim iste alias architecto rerum nesciunt quidem aspernatur aliquam blanditiis, veniam reiciendis ad ipsum commodi ut minima reprehenderit facere molestias quasi corrupti. Laboriosam odio cumque et provident, exercitationem delectus modi non porro vel earum ducimus in nam nemo, ea? Fugiat, ut, non! Nisi voluptas ex accusamus minima repellat. Sunt, odit temporibus?
+			section.call
+				.container
+					.call__inner
+						p.call__text Убедитесь в нашей#[br] экспертности лично
+						a(href="tel:+74953749832").call__phone +7 (495) 374-98-32
 
-		section.reasons
-			.container
-				.reasons__inner
-					h2.reasons__title Почему VentProект ?
-					ul.reasons__list
-						li.reasons__item #[strong 1] Разработаем концепцию и сориентируем по бюджету от 2-х часов
-						li.reasons__item #[strong 2] Разработаем 3d модель системы от 1 дня
-						li.reasons__item #[strong 3] Разработаем проектную документацию
-						li.reasons__item #[strong 4] Подберем  оптимальное оборудование
-						li.reasons__item #[strong 5] Предоставим календарный график выполнения работ
-						li.reasons__item #[strong 6] Выполним монтажные и пуско-наладочные работы
-						li.reasons__item #[strong 7] Произведем паспортизацию и ввод в эксплуатацию
-						li.reasons__item #[strong 8] Обучим правильной эксплуатации системы
+			section.scheme
+				.container
+					.scheme__inner
+						h2.scheme__title Рабочий алгоритм
+						ul.scheme__list
+							li.scheme__item #[strong 1] Вы связываетесь с нами по телефону 8-495-374-98-32
+							li.scheme__item #[strong 2] Наши специалисты выезжают к Вам на объекты
+							li.scheme__item #[strong 3] Согласовываем условия выполнения работ
+							li.scheme__item #[strong 4] Заключаем с Вами договор
+							li.scheme__item #[strong 5] Мы выполняем работы в сроки, прописанные в договоре
+							li.scheme__item #[strong 6] Сдаем работы Вы довольны
 
-		section.contacts
-			.container
-				.contacts__inner
-					.contacts__left
-						h2.contacts__title Контакты
-						p.contacts__item Россия, Москва, Малая Юшуньская улица, 1, корп. 2
-						p.contacts__item Телефон: #[a(href="tel:+74953749832") +7 (495) 374-98-32]
-						p.contacts__item Почта: info@ventproekt.ru
-					.contacts__right
-						iframe(src='https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%', frameborder='1', allowfullscreen='true').contacts__map
+			section.questions
+				.container
+					.questions__inner
+						p.questions__text #[strong Остались вопросы?] Позвоните нам и мы ответим#[br] на все ваши вопросы
+						a(href="tel:+74953749832").questions__phone +7 (495) 374-98-32
+						form.questions__form
+							input.questions__field(type="tel", placeholder="Телефон", required)
+							button.questions__btn Узнать
 
-		footer.footer
-			.container
-				.footer__inner
-					.footer__left
-						img.logo(src="img/logo-2.png", alt="")
-					.footer__middle
-						span.bage Официальная гарантия
-					.footer__right
-						.phone Без выходных
-							a(href="tel:+74953749832") +7 (495) 374-98-32
+
+			section.clients
+				.container
+					.clients__inner
+						h2.clients__title Наши клиенты
+						.clients__list
+							img.clients__item(src="img/clients-logo-1.jpg", alt="")
+							img.clients__item(src="img/clients-logo-2.jpg", alt="")
+							img.clients__item(src="img/clients-logo-3.jpg", alt="")
+							img.clients__item(src="img/clients-logo-4.jpg", alt="")
+							br
+							img.clients__item(src="img/clients-logo-5.jpg", alt="")
+							img.clients__item(src="img/clients-logo-6.jpg", alt="")
+							img.clients__item(src="img/clients-logo-7.jpg", alt="")
+							img.clients__item(src="img/clients-logo-8.jpg", alt="")
+
+			section.seo
+				.container
+					.seo__inner
+						h2.seo__title Наша компания производит проектирование и монтаж инженерных систем
+						p.seo__text #[img(src="img/seo-img.jpg", alt="")] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, voluptatum illo repellendus est facilis amet laboriosam suscipit dolore, modi rerum minima nobis eum dolorem voluptas similique recusandae aliquid assumenda ut fuga dolores voluptate soluta ex, cupiditate. Fuga et voluptatum aspernatur ratione earum fugiat accusantium tenetur id expedita hic aperiam, modi alias non vel ut ab maxime quis. Et incidunt reprehenderit, aut blanditiis amet, explicabo voluptas eum dolorum qui quo vitae earum quibusdam! Ea libero, aliquam amet. Est nemo commodi dolorem rem harum itaque nihil soluta autem, culpa eaque praesentium qui ad dicta, quia sed. Consequuntur minus, earum illo repellat enim iste alias architecto rerum nesciunt quidem aspernatur aliquam blanditiis, veniam reiciendis ad ipsum commodi ut minima reprehenderit facere molestias quasi corrupti. Laboriosam odio cumque et provident, exercitationem delectus modi non porro vel earum ducimus in nam nemo, ea? Fugiat, ut, non! Nisi voluptas ex accusamus minima repellat. Sunt, odit temporibus?
+
+			section.reasons
+				.container
+					.reasons__inner
+						h2.reasons__title Почему VentProект ?
+						ul.reasons__list
+							li.reasons__item #[strong 1] Разработаем концепцию и сориентируем по бюджету от 2-х часов
+							li.reasons__item #[strong 2] Разработаем 3d модель системы от 1 дня
+							li.reasons__item #[strong 3] Разработаем проектную документацию
+							li.reasons__item #[strong 4] Подберем  оптимальное оборудование
+							li.reasons__item #[strong 5] Предоставим календарный график выполнения работ
+							li.reasons__item #[strong 6] Выполним монтажные и пуско-наладочные работы
+							li.reasons__item #[strong 7] Произведем паспортизацию и ввод в эксплуатацию
+							li.reasons__item #[strong 8] Обучим правильной эксплуатации системы
+
+			section.contacts
+				.container
+					.contacts__form
+						form.form#order_form(action="", method="post")
+							p.form__title закажи выезд инженера для оценки стоимости
+							input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+							button.form__btn.btn Перезвоните мне
+					.contacts__inner
+						.contacts__left
+							h2.contacts__title Контакты
+							p.contacts__item Россия, Москва, Малая Юшуньская улица, 1, корп. 2
+							p.contacts__item Телефон: #[a(href="tel:+74953749832") +7 (495) 374-98-32]
+							p.contacts__item Почта: info@ventproekt.ru
+						.contacts__right
+							iframe(src='https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%', frameborder='1', allowfullscreen='true').contacts__map
+
+			footer.footer
+				.container
+					.footer__inner
+						.footer__left
+							img.logo(src="img/logo-2.png", alt="")
+						.footer__middle
+							span.bage Официальная гарантия
+						.footer__right
+							.phone Без выходных
+								a(href="tel:+74953749832") +7 (495) 374-98-32
+
+			.popup
+				table.popup__wrapper
+					tbody
+						tr
+							td.popup__inner
+								.popup__box
+									button.popup__close
+									form.form#order_form(action="", method="post")
+										p.form__title Оставьте номер вашего телефона и мы вам перезвоним
+										input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+										button.form__btn.btn Перезвоните мне
+
+			.response
+				table.response__wrapper
+					tbody
+						tr
+							td.response__inner
+								.response__box
+									button.response__close
+									p.response__title Ваша заявка принята
+									p.response__text Спасибо за ваше доверие! В ближайшее время мы вам перезвоним.
+									
 
 		script(src="js/slick.min.js")
 		script(src="js/common.js")

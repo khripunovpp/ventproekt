@@ -24,7 +24,7 @@
           <div class="header__inner">
             <div class="header__logo"><img class="logo" src="img/logo.png" alt=""></div>
             <div class="header__middle"><span class="bage bage--invert">Официальная гарантия</span>
-              <button class="bage">Позвоните мне</button>
+              <button class="bage js-modal">Позвоните мне</button>
             </div>
             <div class="header__phone">
               <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a></div>
@@ -32,10 +32,12 @@
           </div>
         </div>
         <div class="header__nav">
+          <button class="header__burger js-menuToggle"></button>
           <div class="menu">
-            <button class="menu__button"></button>
             <nav class="menu__list"><a class="menu__item" href="">О компании</a><a class="menu__item" href="">Преимущества</a><a class="menu__item" href="">Наши клиенты</a><a class="menu__item menu__item--highlight" href="">Цены</a><a class="menu__item menu__item--highlight" href="">Наши работы</a><a class="menu__item menu__item--highlight" href="">Контакты</a></nav>
-            <div class="menu__footer"><span class="bage bage--invert">Официальная гарантия</span><a class="bage" href="">Позвоните мне</a></div>
+            <div class="menu__footer"><span class="bage bage--invert">Официальная гарантия</span>
+              <button class="bage js-modal">Позвоните мне</button>
+            </div>
           </div>
         </div>
       </header>
@@ -47,7 +49,7 @@
               <p class="hero__subtitle">Гарантия до 5-х лет на монтаж и обслуживание<br> всех инженерных систем.</p>
               <p class="hero__price">Цены на услуги <strong>от 350 &#8381;/м2</strong></p>
               <div class="hero__footer">
-                <button class="hero__button btn">Заказать</button><a class="hero__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
+                <button class="hero__button btn js-modal">Заказать</button><a class="hero__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
               </div>
             </div>
             <div class="hero__right">
@@ -85,208 +87,338 @@
           <p class="guarantees__promo"><strong>Гарантия до 60 мес.</strong> Сделаем бесплатно понятную и развернутую смету за 24 часа!</p>
         </div>
       </section>
-    </div>
-    <section class="places">
-      <div class="container">
-        <div class="places__inner">
-          <h2 class="places__title">Осуществляем монтаж вентиляции под ключ на любых объектах, от квартиры до промышленного предприятия</h2>
-          <div class="places__slider">
-            <ul class="places__list">
-              <li class="places__item"><img class="places__item-img" src="img/places-img-1.jpg" alt="">
-                <p class="places__item-text">Торговые и административные<br> здания и помещения</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-2.jpg" alt="">
-                <p class="places__item-text">Промышленные<br> объекты</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-3.jpg" alt="">
-                <p class="places__item-text">Объекты<br> специального назначения</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-4.jpg" alt="">
-                <p class="places__item-text">Спортивно-оздоровительные комплексы</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-5.jpg" alt="">
-                <p class="places__item-text">Объекты<br> здравоохранения</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-6.jpg" alt="">
-                <p class="places__item-text">Предприятия общественного<br> питания</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-7.jpg" alt="">
-                <p class="places__item-text">Гостиничный<br> бизнес</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-8.jpg" alt="">
-                <p class="places__item-text">Объекты культуры<br> и образования</p>
-              </li>
-              <li class="places__item"><img class="places__item-img" src="img/places-img-9.jpg" alt="">
-                <p class="places__item-text">Частные<br> объекты</p>
-              </li>
+      <section class="places">
+        <div class="container">
+          <div class="places__inner">
+            <h2 class="places__title">Осуществляем монтаж вентиляции под ключ на любых объектах, от квартиры до промышленного предприятия</h2>
+            <div class="places__slider">
+              <ul class="places__list">
+                <li class="places__item"><img class="places__item-img" src="img/places-img-1.jpg" alt="">
+                  <p class="places__item-text">Торговые и административные<br> здания и помещения</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-2.jpg" alt="">
+                  <p class="places__item-text">Промышленные<br> объекты</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-3.jpg" alt="">
+                  <p class="places__item-text">Объекты<br> специального назначения</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-4.jpg" alt="">
+                  <p class="places__item-text">Спортивно-оздоровительные комплексы</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-5.jpg" alt="">
+                  <p class="places__item-text">Объекты<br> здравоохранения</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-6.jpg" alt="">
+                  <p class="places__item-text">Предприятия общественного<br> питания</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-7.jpg" alt="">
+                  <p class="places__item-text">Гостиничный<br> бизнес</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-8.jpg" alt="">
+                  <p class="places__item-text">Объекты культуры<br> и образования</p>
+                </li>
+                <li class="places__item"><img class="places__item-img" src="img/places-img-9.jpg" alt="">
+                  <p class="places__item-text">Частные<br> объекты</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pricelist">
+        <div class="container">
+          <div class="pricelist__inner">
+            <h2 class="pricelist__title">Цены на услуги</h2>
+            <p class="pricelist__disclamer">Цены указаны без учета стоимости деталей</p>
+            <div class="pricelist__categories">
+              <p class="pricelist__tab active" data-tab-id="1">Монтаж систем<br> вентиляции</p>
+              <div class="pricelist__prices active" data-content-id="1">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Воздуховоды</p>
+                  <p class="pricelist__prices-price">от 490 ₽/м2</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Вентиляторы</p>
+                  <p class="pricelist__prices-price">от 4 500 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Шумоглушители</p>
+                  <p class="pricelist__prices-price">от 980 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Приточная установка</p>
+                  <p class="pricelist__prices-price">от 14 900 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Теплоизоляция</p>
+                  <p class="pricelist__prices-price">от 150 ₽/м2</p>
+                </div>
+              </div>
+              <p class="pricelist__tab" data-tab-id="2">Монтаж систем<br> кондиционирования</p>
+              <div class="pricelist__prices" data-content-id="2">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Кондиционер</p>
+                  <p class="pricelist__prices-price">от 8 900 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Дренажная помпа</p>
+                  <p class="pricelist__prices-price">от 1 580 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Канальный кондиционер</p>
+                  <p class="pricelist__prices-price">от 9 870 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">VRV система</p>
+                  <p class="pricelist__prices-price">от 27 800 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Опрессовка азотом</p>
+                  <p class="pricelist__prices-price">от 7 500 ₽</p>
+                </div>
+              </div>
+              <p class="pricelist__tab" data-tab-id="3">Монтаж систем<br> холодоснабжения</p>
+              <div class="pricelist__prices" data-content-id="3">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Чиллер</p>
+                  <p class="pricelist__prices-price">от 87 340 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Фанкойл</p>
+                  <p class="pricelist__prices-price">от 7 580 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Трубопровод</p>
+                  <p class="pricelist__prices-price">от 210 ₽/м.п.</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Узел обвязки</p>
+                  <p class="pricelist__prices-price">от 5 370 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">ПУльт управления</p>
+                  <p class="pricelist__prices-price">от 1 430 ₽</p>
+                </div>
+              </div>
+              <p class="pricelist__tab" data-tab-id="4">Монтаж систем<br> дымоудаления</p>
+              <div class="pricelist__prices" data-content-id="4">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Воздуховоды</p>
+                  <p class="pricelist__prices-price">от 750 ₽/м2</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Огнезащита</p>
+                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Вентилятор</p>
+                  <p class="pricelist__prices-price">от 18 340 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Клапан дымоудаления</p>
+                  <p class="pricelist__prices-price">от 3 240 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Щит управления</p>
+                  <p class="pricelist__prices-price">от 9 370 ₽</p>
+                </div>
+              </div>
+              <p class="pricelist__tab" data-tab-id="5">Автоматизация<br> и диспетчерезация</p>
+              <div class="pricelist__prices" data-content-id="5">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Прокладка кабеля</p>
+                  <p class="pricelist__prices-price">от 18 ₽/м.п.</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Установка лотка</p>
+                  <p class="pricelist__prices-price">от 210 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Сборка щита</p>
+                  <p class="pricelist__prices-price">от 14 730 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Установка датчика</p>
+                  <p class="pricelist__prices-price">от 470 ₽</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">Пусконаладочные работы</p>
+                  <p class="pricelist__prices-price">от 8 720 ₽</p>
+                </div>
+              </div>
+              <p class="pricelist__tab" data-tab-id="6">Алмазное бурение<br> отверстий</p>
+              <div class="pricelist__prices" data-content-id="6">
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">В кирпиче</p>
+                  <p class="pricelist__prices-price">от 14 ₽/см</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">В бетоне</p>
+                  <p class="pricelist__prices-price">от 18 ₽/см</p>
+                </div>
+                <div class="pricelist__prices-item">
+                  <p class="pricelist__prices-name">В армированном бетоне</p>
+                  <p class="pricelist__prices-price">от 20 ₽/см</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="promo">
+        <div class="container">
+          <div class="promo__inner">
+            <p class="promo__text">Узнайте стоимость<br> монтажа</p>
+            <form class="promo__form">
+              <input class="promo__field" type="tel" placeholder="Телефон" required>
+              <button class="promo__btn">Узнать</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="pics">
+        <div class="container">
+          <div class="pics__inner">
+            <h2 class="pics__title">Наши работы</h2>
+            <div class="pics__slider">
+              <div class="pics__list"><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""><img class="pics__item" src="img/pic-1.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="call">
+        <div class="container">
+          <div class="call__inner">
+            <p class="call__text">Убедитесь в нашей<br> экспертности лично</p><a class="call__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
+          </div>
+        </div>
+      </section>
+      <section class="scheme">
+        <div class="container">
+          <div class="scheme__inner">
+            <h2 class="scheme__title">Рабочий алгоритм</h2>
+            <ul class="scheme__list">
+              <li class="scheme__item"><strong>1</strong> Вы связываетесь с нами по телефону 8-495-374-98-32</li>
+              <li class="scheme__item"><strong>2</strong> Наши специалисты выезжают к Вам на объекты</li>
+              <li class="scheme__item"><strong>3</strong> Согласовываем условия выполнения работ</li>
+              <li class="scheme__item"><strong>4</strong> Заключаем с Вами договор</li>
+              <li class="scheme__item"><strong>5</strong> Мы выполняем работы в сроки, прописанные в договоре</li>
+              <li class="scheme__item"><strong>6</strong> Сдаем работы Вы довольны</li>
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="pricelist">
-      <div class="container">
-        <div class="pricelist__inner">
-          <h2 class="pricelist__title">Цены на услуги</h2>
-          <p class="pricelist__disclamer">Цены указаны без учета стоимости деталей</p>
-          <div class="pricelist__categories">
-            <p class="pricelist__categories-item">Монтаж систем<br> вентиляции</p>
-            <p class="pricelist__categories-item">Монтаж систем<br> кондиционирования</p>
-            <p class="pricelist__categories-item">Монтаж систем<br> холодоснабжения</p>
-            <p class="pricelist__categories-item">Монтаж систем<br> дымоудаления</p>
+      </section>
+      <section class="questions">
+        <div class="container">
+          <div class="questions__inner">
+            <p class="questions__text"><strong>Остались вопросы?</strong> Позвоните нам и мы ответим<br> на все ваши вопросы</p><a class="questions__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
+            <form class="questions__form">
+              <input class="questions__field" type="tel" placeholder="Телефон" required>
+              <button class="questions__btn">Узнать</button>
+            </form>
           </div>
-          <div class="pricelist__prices">
-            <div class="pricelist__prices-section">
-              <div class="pricelist__prices-wrapper">
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-              </div>
+        </div>
+      </section>
+      <section class="clients">
+        <div class="container">
+          <div class="clients__inner">
+            <h2 class="clients__title">Наши клиенты</h2>
+            <div class="clients__list"><img class="clients__item" src="img/clients-logo-1.jpg" alt=""><img class="clients__item" src="img/clients-logo-2.jpg" alt=""><img class="clients__item" src="img/clients-logo-3.jpg" alt=""><img class="clients__item" src="img/clients-logo-4.jpg" alt=""><br><img class="clients__item" src="img/clients-logo-5.jpg" alt=""><img class="clients__item" src="img/clients-logo-6.jpg" alt=""><img class="clients__item" src="img/clients-logo-7.jpg" alt=""><img class="clients__item" src="img/clients-logo-8.jpg" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <section class="seo">
+        <div class="container">
+          <div class="seo__inner">
+            <h2 class="seo__title">Наша компания производит проектирование и монтаж инженерных систем</h2>
+            <p class="seo__text"><img src="img/seo-img.jpg" alt=""> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, voluptatum illo repellendus est facilis amet laboriosam suscipit dolore, modi rerum minima nobis eum dolorem voluptas similique recusandae aliquid assumenda ut fuga dolores voluptate soluta ex, cupiditate. Fuga et voluptatum aspernatur ratione earum fugiat accusantium tenetur id expedita hic aperiam, modi alias non vel ut ab maxime quis. Et incidunt reprehenderit, aut blanditiis amet, explicabo voluptas eum dolorum qui quo vitae earum quibusdam! Ea libero, aliquam amet. Est nemo commodi dolorem rem harum itaque nihil soluta autem, culpa eaque praesentium qui ad dicta, quia sed. Consequuntur minus, earum illo repellat enim iste alias architecto rerum nesciunt quidem aspernatur aliquam blanditiis, veniam reiciendis ad ipsum commodi ut minima reprehenderit facere molestias quasi corrupti. Laboriosam odio cumque et provident, exercitationem delectus modi non porro vel earum ducimus in nam nemo, ea? Fugiat, ut, non! Nisi voluptas ex accusamus minima repellat. Sunt, odit temporibus?</p>
+          </div>
+        </div>
+      </section>
+      <section class="reasons">
+        <div class="container">
+          <div class="reasons__inner">
+            <h2 class="reasons__title">Почему VentProект ?</h2>
+            <ul class="reasons__list">
+              <li class="reasons__item"><strong>1</strong> Разработаем концепцию и сориентируем по бюджету от 2-х часов</li>
+              <li class="reasons__item"><strong>2</strong> Разработаем 3d модель системы от 1 дня</li>
+              <li class="reasons__item"><strong>3</strong> Разработаем проектную документацию</li>
+              <li class="reasons__item"><strong>4</strong> Подберем  оптимальное оборудование</li>
+              <li class="reasons__item"><strong>5</strong> Предоставим календарный график выполнения работ</li>
+              <li class="reasons__item"><strong>6</strong> Выполним монтажные и пуско-наладочные работы</li>
+              <li class="reasons__item"><strong>7</strong> Произведем паспортизацию и ввод в эксплуатацию</li>
+              <li class="reasons__item"><strong>8</strong> Обучим правильной эксплуатации системы</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="container">
+          <div class="contacts__form">
+            <form class="form" id="order_form" action="" method="post">
+              <p class="form__title">закажи выезд инженера для оценки стоимости</p>
+              <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+              <button class="form__btn btn">Перезвоните мне</button>
+            </form>
+          </div>
+          <div class="contacts__inner">
+            <div class="contacts__left">
+              <h2 class="contacts__title">Контакты</h2>
+              <p class="contacts__item">Россия, Москва, Малая Юшуньская улица, 1, корп. 2</p>
+              <p class="contacts__item">Телефон: <a href="tel:+74953749832">+7 (495) 374-98-32</a></p>
+              <p class="contacts__item">Почта: info@ventproekt.ru</p>
             </div>
-            <div class="pricelist__prices-section">
-              <div class="pricelist__prices-wrapper">
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-                <div class="pricelist__prices-item">
-                  <p class="pricelist__prices-name">Воздуховоды</p>
-                  <p class="pricelist__prices-price">от 350 ₽/м2</p>
-                </div>
-              </div>
+            <div class="contacts__right">
+              <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%" frameborder="1" allowfullscreen="true"></iframe>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="promo">
-      <div class="container">
-        <div class="promo__inner">
-          <p class="promo__text">Узнайте стоимость<br> монтажа</p>
-          <form class="promo__form">
-            <input class="promo__field" type="tel" placeholder="Телефон" required>
-            <button class="promo__btn">Узнать</button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <section class="call">
-      <div class="container">
-        <div class="call__inner">
-          <p class="call__text">Убедитесь в нашей<br> экспертности лично</p><a class="call__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
-        </div>
-      </div>
-    </section>
-    <section class="scheme">
-      <div class="container">
-        <div class="scheme__inner">
-          <h2 class="scheme__title">Рабочий алгоритм</h2>
-          <ul class="scheme__list">
-            <li class="scheme__item"><strong>1</strong> Вы связываетесь с нами по телефону 8-495-374-98-32</li>
-            <li class="scheme__item"><strong>2</strong> Наши специалисты выезжают к Вам на объекты</li>
-            <li class="scheme__item"><strong>3</strong> Согласовываем условия выполнения работ</li>
-            <li class="scheme__item"><strong>4</strong> Заключаем с Вами договор</li>
-            <li class="scheme__item"><strong>5</strong> Мы выполняем работы в сроки, прописанные в договоре</li>
-            <li class="scheme__item"><strong>6</strong> Сдаем работы Вы довольны</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="questions">
-      <div class="container">
-        <div class="questions__inner">
-          <p class="questions__text"><strong>Остались вопросы?</strong> Позвоните нам и мы ответим<br> на все ваши вопросы</p><a class="questions__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
-        </div>
-      </div>
-    </section>
-    <section class="clients">
-      <div class="container">
-        <div class="clients__inner">
-          <h2 class="clients__title">Наши клиенты</h2>
-          <div class="clients__list"><img class="clients__item" src="img/clients-logo-1.jpg" alt=""><img class="clients__item" src="img/clients-logo-2.jpg" alt=""><img class="clients__item" src="img/clients-logo-3.jpg" alt=""><img class="clients__item" src="img/clients-logo-4.jpg" alt=""><br><img class="clients__item" src="img/clients-logo-5.jpg" alt=""><img class="clients__item" src="img/clients-logo-6.jpg" alt=""><img class="clients__item" src="img/clients-logo-7.jpg" alt=""><img class="clients__item" src="img/clients-logo-8.jpg" alt=""></div>
-        </div>
-      </div>
-    </section>
-    <section class="seo">
-      <div class="container">
-        <div class="seo__inner">
-          <h2 class="seo__title">Наши клиенты</h2>
-          <p class="seo__text"><img src="img/seo-img.jpg" alt=""> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, voluptatum illo repellendus est facilis amet laboriosam suscipit dolore, modi rerum minima nobis eum dolorem voluptas similique recusandae aliquid assumenda ut fuga dolores voluptate soluta ex, cupiditate. Fuga et voluptatum aspernatur ratione earum fugiat accusantium tenetur id expedita hic aperiam, modi alias non vel ut ab maxime quis. Et incidunt reprehenderit, aut blanditiis amet, explicabo voluptas eum dolorum qui quo vitae earum quibusdam! Ea libero, aliquam amet. Est nemo commodi dolorem rem harum itaque nihil soluta autem, culpa eaque praesentium qui ad dicta, quia sed. Consequuntur minus, earum illo repellat enim iste alias architecto rerum nesciunt quidem aspernatur aliquam blanditiis, veniam reiciendis ad ipsum commodi ut minima reprehenderit facere molestias quasi corrupti. Laboriosam odio cumque et provident, exercitationem delectus modi non porro vel earum ducimus in nam nemo, ea? Fugiat, ut, non! Nisi voluptas ex accusamus minima repellat. Sunt, odit temporibus?</p>
-        </div>
-      </div>
-    </section>
-    <section class="reasons">
-      <div class="container">
-        <div class="reasons__inner">
-          <h2 class="reasons__title">Почему VentProект ?</h2>
-          <ul class="reasons__list">
-            <li class="reasons__item"><strong>1</strong> Разработаем концепцию и сориентируем по бюджету от 2-х часов</li>
-            <li class="reasons__item"><strong>2</strong> Разработаем 3d модель системы от 1 дня</li>
-            <li class="reasons__item"><strong>3</strong> Разработаем проектную документацию</li>
-            <li class="reasons__item"><strong>4</strong> Подберем  оптимальное оборудование</li>
-            <li class="reasons__item"><strong>5</strong> Предоставим календарный график выполнения работ</li>
-            <li class="reasons__item"><strong>6</strong> Выполним монтажные и пуско-наладочные работы</li>
-            <li class="reasons__item"><strong>7</strong> Произведем паспортизацию и ввод в эксплуатацию</li>
-            <li class="reasons__item"><strong>8</strong> Обучим правильной эксплуатации системы</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="contacts">
-      <div class="container">
-        <div class="contacts__inner">
-          <div class="contacts__left">
-            <h2 class="contacts__title">Контакты</h2>
-            <p class="contacts__item">Россия, Москва, Малая Юшуньская улица, 1, корп. 2</p>
-            <p class="contacts__item">Телефон: <a href="tel:+74953749832">+7 (495) 374-98-32</a></p>
-            <p class="contacts__item">Почта: info@ventproekt.ru</p>
-          </div>
-          <div class="contacts__right">
-            <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%" frameborder="1" allowfullscreen="true"></iframe>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__left"><img class="logo" src="img/logo-2.png" alt=""></div>
+            <div class="footer__middle"><span class="bage">Официальная гарантия</span></div>
+            <div class="footer__right">
+              <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a></div>
+            </div>
           </div>
         </div>
+      </footer>
+      <div class="popup">
+        <table class="popup__wrapper">
+          <tbody>
+            <tr>
+              <td class="popup__inner">
+                <div class="popup__box">
+                  <button class="popup__close"></button>
+                  <form class="form" id="order_form" action="" method="post">
+                    <p class="form__title">Оставьте номер вашего телефона и мы вам перезвоним</p>
+                    <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+                    <button class="form__btn btn">Перезвоните мне</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-          <div class="footer__left"><img class="logo" src="img/logo-2.png" alt=""></div>
-          <div class="footer__middle"><span class="bage">Официальная гарантия</span></div>
-          <div class="footer__right">
-            <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a></div>
-          </div>
-        </div>
+      <div class="response">
+        <table class="response__wrapper">
+          <tbody>
+            <tr>
+              <td class="response__inner">
+                <div class="response__box">
+                  <button class="response__close"></button>
+                  <p class="response__title">Ваша заявка принята</p>
+                  <p class="response__text">Спасибо за ваше доверие! В ближайшее время мы вам перезвоним.</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </footer>
+    </div>
     <script src="js/slick.min.js"></script>
     <script src="js/common.js"></script>
   </body>

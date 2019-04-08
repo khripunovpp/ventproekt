@@ -1,10 +1,92 @@
 @import "bourbon"
 
+@media only screen and (max-width : 1150px)
+	.pics__item
+		max-width: none !important
+		max-height: none !important
+		&:nth-child(7)
+			margin-top: 30px
+
+	.pricelist
+		&__tab
+			font-size: 15px
+
+	
 
 /* Desktop-frist */
 @media only screen and (max-width : 991px)
 	.container
 		max-width: 500px
+
+	.header
+		&__inner,
+		&__logo,
+		&__phone
+			display: block
+			width: auto
+		&__middle
+			display: none
+		&__top
+			padding: 0
+			border: none
+		&__inner
+			padding: 0
+		&__logo
+			padding: 15px
+			font-size: 0
+		&__nav
+			padding: 0
+		&__burger
+			width: 30px
+			height: 30px
+			position: absolute
+			display: block
+			top: 15px
+			right: 15px
+			background-color: transparent
+			border: none
+			padding: 0
+			background-image: url(../img/icon-burger.png)
+			background-repeat: no-repeat
+			background-position: 100% 50%
+			&.open
+				background-image: url(../img/icon-close.png)
+				background-position: 100% 0%
+		.logo
+			max-width: 155px
+		.phone
+			text-align: center
+			font-size: 0
+			padding: 8px
+			background-color: #5c84f0
+			a
+				font-size: 20px
+				color: #fff
+				margin: 0
+
+	.menu
+		display: none
+		&__list
+			display: block
+			padding: 20px 0
+			margin: 0
+			transform: none
+		&__item
+			display: block
+			padding: 10px 15px
+			background-color: #eef2fd
+			&+&
+				margin-top: 5px
+		&__footer
+			display: block
+			padding: 0 15px 20px
+
+
+	.bage
+		margin: 0
+		width: 100%
+		&+&
+			margin-top: 10px
 
 	.hero
 		padding: 0
@@ -60,12 +142,16 @@
 	.form
 		&__title
 			font-size: 14px
-			padding: 0 20%
+			max-width: 320px
+			margin-left: auto
+			margin-right: auto
 			margin-bottom: 15px
 		&__field
 			margin-bottom: 10px
+			font-size: 16px
+			text-align: center
 		&__btn
-			font-size: 18px
+			font-size: 16px
 
 	.guarantees
 		padding: 15px 0
@@ -110,9 +196,317 @@
 		&__slider
 			max-width: 270px
 			margin: 0 auto
+			position: relative
 		&__item
 			width: auto
 			margin: 0
+			float: left
 			&-text
 				font-size: 14px
 				padding: 10px 20px
+
+	.pricelist
+		padding: 30px 0
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__disclamer
+			position: relative
+			top: auto
+			right: auto
+		&__categories
+		&__tab
+			float: none
+			font-weight: 700
+			font-size: 20px
+			width: 100%	
+			margin: 0
+			margin-top: 10px
+			position: relative
+			&.active
+				&::before
+					transform: scale(1,-1)
+			&::after
+				width: 100%
+			&::before
+				content: url(../img/icon-arrow.png)
+				position: absolute
+				top: 50%
+				right: 0
+				margin-top: -15px
+		&__prices
+			float: none
+			margin: 0
+			padding-bottom: 15px
+			&.active
+				display: block !important
+			&-item
+				padding: 15px
+				display: flex
+				justify-content: space-between
+				align-items: center
+				margin-top: 10px
+			&-name
+				display: inline-block
+				vertical-align: middle
+				font-size: 16px
+				padding-right: 15px
+			&-price
+				display: inline-block
+				vertical-align: middle
+				margin-top: 0
+				font-size: 20px
+
+	.promo
+		&__inner
+			padding: 15px
+			display: block
+			background-position: right -50px center, center center
+			background-size: 150px, auto
+		&__text,
+		&__form
+			display: block
+		&__text
+			font-size: 24px	
+			padding: 0
+			width: 150px
+			margin-bottom: 20px
+		&__form
+			text-align: center
+		&__field
+			display: block
+			width: 100%	
+			margin: 0
+			font-size: 16px
+			text-align: center
+		&__btn
+			display: block
+			width: 100%
+			margin-top: 10px
+			font-size: 16px
+			border-radius: 6px
+
+	.call
+		&__inner,
+		&__text,
+		&__phone
+			display: block
+		&__inner
+			padding: 15px
+			background-position: right -50px center, center center
+			background-size: 150px, auto
+		&__text
+			font-size: 24px
+			width: 150px
+			margin-bottom: 25px
+		&__phone
+			font-size: 24px
+			text-align: center
+
+	.scheme
+		padding: 30px 0
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__list
+			display: block
+		&__item
+			padding: 15px 15px 15px 100px
+			font-size: 14px
+			min-height: 90px
+			margin-top: 10px
+			strong
+				width: 60px
+				height: 60px
+				margin-top: -30px
+				font-size: 30px
+				border-width: 5px
+				left: 15px
+
+	.questions
+		&__inner,
+		&__text,
+		&__phone,
+		&__form
+			display: block
+		&__inner
+			padding: 15px
+			font-size: 16px
+			background-position: right -50px top -15px, center center
+			background-size: 150px, auto
+		&__text
+			margin-bottom: 15px
+			strong
+				font-size: 24px
+		&__phone
+			font-size: 24px
+			text-align: left
+		&__form
+			margin-top: 25px
+		&__field
+			width: 100%
+			color: #010101
+			font-size: 16px
+			border-radius: 6px
+			border: none
+			padding: 16px
+			font-weight: 400
+			margin: 0 25px 0 0
+			display: inline-block
+			vertical-align: middle
+		&__btn
+			text-align: center
+			border: none
+			background-color: #5d75d7
+			font-family: $font2_700
+			font-size: 16px
+			color: #fff
+			padding: 15px 30px
+			width: 100%
+			border-radius: 6px
+			cursor: pointer
+			transition: all .2s
+			margin-top: 10px
+			&:hover
+				transform: scale(1.1)
+
+	.clients
+		padding: 30px 0
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+
+	.seo
+		padding: 0 0 30px
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__text
+			font-size: 14px
+			img
+				float: none
+				top: auto
+				margin: 0 auto 15px
+				display: block
+
+	.reasons
+		padding: 30px 0
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__list
+			display: block
+		&__item
+			display: flex
+			align-items: center
+			padding: 15px 15px 15px 100px
+			position: relative
+			min-height: 90px
+			strong
+				display: block
+				position: absolute
+				left: 15px
+				top: 50%
+				margin-top: -30px
+				width: 60px
+				height: 60px
+				border-width: 5px
+				font-size: 30px
+				line-height: 55px
+
+	.contacts
+		padding: 15px 0 0
+		margin-left: -30px
+		transform: translateX(15px)
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__inner,
+		&__left,
+		&__right
+			display: block
+		&__left
+			padding: 30px 15px 15px
+		&__item
+			font-size: 16px
+		&__right
+			padding-top: 100%
+			width: 100%
+		&__form
+			display: block
+			background-color: #324d7d
+			background-image: linear-gradient(to bottom, #1c305a, #5077ad)
+			padding: 15px
+
+	.footer
+		padding: 15px 0
+		&__inner
+			table-layout: initial
+		&__middle
+			display: none
+		.logo
+			max-width: 105px
+		.phone
+			font-size: 0
+			a
+				font-size: 18px
+				margin: 0
+
+	.popup
+		&__box
+			padding: 35px 20px
+		.form
+			&__title
+				font-size: 16px
+
+	.response
+		&__box
+			padding: 35px 20px
+		&__title
+			font-size: 20px
+			margin-bottom: 10px
+		&__text
+			font-size: 16px
+
+
+	.pics
+		padding: 30px 0
+		&__title
+			font-size: 24px
+			padding-bottom: 20px
+			margin-bottom: 15px
+		&__list
+			display: block
+			overflow: hidden
+		&__item
+			margin: 0 !important
+
+
+	.slick-list
+		overflow: hidden
+	.slick-dotted.slick-slider
+		margin-bottom: 0
+	.slick-dots
+		bottom: auto
+		position: relative
+		margin-top: 10px
+		li
+			display: inline-block
+			width: auto
+			height: auto
+			button
+				width: 12px
+				height: 12px
+				background-color: #8a92a6
+				transform: scale(.7)
+			&.slick-active,
+			&:hover
+				button
+					transform: scale(1)
+					background-color: #00b8ff
