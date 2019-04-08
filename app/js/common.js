@@ -39,7 +39,7 @@ var placesSlider = function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-         dots: true,
+        dots: true,
         infinite: false,
         responsive: [{
             breakpoint: 1131,
@@ -78,7 +78,7 @@ var picsSlider = function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-         dots: true,
+        dots: true,
         infinite: false,
         responsive: [{
             breakpoint: 1131,
@@ -139,6 +139,30 @@ var popup = function() {
     });
 }
 
+var smooth = function() {
+    $(".menu__item").on('click', function(event) {
+
+        if (this.hash !== "") {
+
+            event.preventDefault();
+
+            var hash = this.hash;
+
+            $('html, body').animate({
+
+                scrollTop: $(hash).offset().top
+
+            }, 800, function() {
+
+                window.location.hash = hash;
+
+            });
+
+        }
+
+    });
+}
+
 
 $(function() {
     pricelistSlider()
@@ -146,4 +170,5 @@ $(function() {
     popup()
     placesSlider()
     picsSlider()
+    smooth()
 });

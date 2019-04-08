@@ -36,10 +36,10 @@ html
 						nav.menu__list
 							a.menu__item(href="") О компании
 							a.menu__item(href="") Преимущества
-							a.menu__item(href="") Наши клиенты
-							a.menu__item.menu__item--highlight(href="") Цены
-							a.menu__item.menu__item--highlight(href="") Наши работы
-							a.menu__item.menu__item--highlight(href="") Контакты
+							a.menu__item(href="#clients") Наши клиенты
+							a.menu__item.menu__item--highlight(href="#pricelist") Цены
+							a.menu__item.menu__item--highlight(href="#pics") Наши работы
+							a.menu__item.menu__item--highlight(href="#contacts") Контакты
 						.menu__footer
 							span.bage.bage--invert Официальная гарантия
 							button.bage.js-modal Позвоните мне
@@ -119,7 +119,7 @@ html
 
 
 
-			section.pricelist
+			section.pricelist#pricelist
 				.container
 					.pricelist__inner
 						h2.pricelist__title Цены на услуги
@@ -232,7 +232,7 @@ html
 							button.promo__btn Узнать
 
 
-			section.pics
+			section.pics#pics
 				.container
 					.pics__inner
 						h2.pics__title Наши работы
@@ -276,7 +276,7 @@ html
 							button.questions__btn Узнать
 
 
-			section.clients
+			section.clients#clients
 				.container
 					.clients__inner
 						h2.clients__title Наши клиенты
@@ -311,7 +311,7 @@ html
 							li.reasons__item #[strong 7] Произведем паспортизацию и ввод в эксплуатацию
 							li.reasons__item #[strong 8] Обучим правильной эксплуатации системы
 
-			section.contacts
+			section.contacts#contacts
 				.container
 					.contacts__form
 						form.form#order_form(action="", method="post")
