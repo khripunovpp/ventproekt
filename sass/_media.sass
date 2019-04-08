@@ -1,11 +1,17 @@
 @import "bourbon"
 
 @media only screen and (max-width : 1150px)
-	.pics__item
-		max-width: none !important
-		max-height: none !important
-		&:nth-child(7)
-			margin-top: 30px
+
+	.pics
+		&__list
+			display: block
+			overflow: auto
+		&__item
+			max-width: none !important
+			max-height: none !important
+			height: 250px
+			width: 33%
+			margin: 0 !important
 
 	.pricelist
 		&__tab
@@ -19,6 +25,12 @@
 		max-width: 500px
 
 	.header
+		background-color: #fff
+		z-index: 5
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
 		&__inner,
 		&__logo,
 		&__phone
@@ -90,6 +102,7 @@
 
 	.hero
 		padding: 0
+		margin-top: 94px
 		&__inner,
 		&__left,
 		&__right
@@ -110,7 +123,7 @@
 			line-height: 1.2
 			margin-bottom: 15px
 			strong
-				font-size: 35px
+				font-size: 18px
 				margin-top: 0
 		&__subtitle
 			margin-bottom: 25px
@@ -207,6 +220,8 @@
 
 	.pricelist
 		padding: 30px 0
+		&__form
+			display: none
 		&__title
 			font-size: 24px
 			padding-bottom: 20px
@@ -239,8 +254,9 @@
 			float: none
 			margin: 0
 			padding-bottom: 15px
+			padding-right: 0
 			&.active
-				display: block !important
+				display: block
 			&-item
 				padding: 15px
 				display: flex
@@ -259,6 +275,7 @@
 				font-size: 20px
 
 	.promo
+		display: block
 		&__inner
 			padding: 15px
 			display: block
@@ -290,19 +307,30 @@
 	.call
 		&__inner,
 		&__text,
-		&__phone
+		&__form
 			display: block
 		&__inner
 			padding: 15px
 			background-position: right -50px center, center center
 			background-size: 150px, auto
 		&__text
-			font-size: 24px
-			width: 150px
-			margin-bottom: 25px
-		&__phone
-			font-size: 24px
+			font-size: 24px	
+			padding: 0
+			margin-bottom: 20px
+		&__form
 			text-align: center
+		&__field
+			display: block
+			width: 100%	
+			margin: 0
+			font-size: 16px
+			text-align: center
+		&__btn
+			display: block
+			width: 100%
+			margin-top: 10px
+			font-size: 16px
+			border-radius: 6px
 
 	.scheme
 		padding: 30px 0
@@ -328,7 +356,6 @@
 	.questions
 		&__inner,
 		&__text,
-		&__phone,
 		&__form
 			display: block
 		&__inner
@@ -338,39 +365,23 @@
 			background-size: 150px, auto
 		&__text
 			margin-bottom: 15px
+			padding-left: 0
 			strong
 				font-size: 24px
-		&__phone
-			font-size: 24px
-			text-align: left
 		&__form
-			margin-top: 25px
-		&__field
-			width: 100%
-			color: #010101
-			font-size: 16px
-			border-radius: 6px
-			border: none
-			padding: 16px
-			font-weight: 400
-			margin: 0 25px 0 0
-			display: inline-block
-			vertical-align: middle
-		&__btn
 			text-align: center
-			border: none
-			background-color: #5d75d7
-			font-family: $font2_700
+		&__field
+			display: block
+			width: 100%	
+			margin: 0
 			font-size: 16px
-			color: #fff
-			padding: 15px 30px
+			text-align: center
+		&__btn
+			display: block
 			width: 100%
-			border-radius: 6px
-			cursor: pointer
-			transition: all .2s
 			margin-top: 10px
-			&:hover
-				transform: scale(1.1)
+			font-size: 16px
+			border-radius: 6px
 
 	.clients
 		padding: 30px 0
@@ -381,12 +392,12 @@
 
 	.seo
 		padding: 0 0 30px
+		font-size: 14px
 		&__title
 			font-size: 24px
 			padding-bottom: 20px
 			margin-bottom: 15px
 		&__text
-			font-size: 14px
 			img
 				float: none
 				top: auto
@@ -418,6 +429,12 @@
 				border-width: 5px
 				font-size: 30px
 				line-height: 55px
+			&:nth-child(3),
+			&:nth-child(5),
+			&:nth-child(7),
+			&:nth-child(8)
+				display: none
+
 
 	.contacts
 		padding: 15px 0 0
@@ -458,12 +475,26 @@
 				font-size: 18px
 				margin: 0
 
-	.popup
+	.popup,
+	.modal
 		&__box
 			padding: 35px 20px
 		.form
 			&__title
 				font-size: 16px
+
+	.modal
+		&__step
+			padding-left: 70px
+			font-size: 15px
+			min-height: 50px
+			i
+				width: 50px
+				height: 50px
+				margin-top: -25px
+				font-size: 20px
+				line-height: 40px
+				border-width: 5px
 
 	.response
 		&__box
@@ -481,11 +512,15 @@
 			font-size: 24px
 			padding-bottom: 20px
 			margin-bottom: 15px
+		&__slider
+			max-width: 370px
+			margin: 0 auto
 		&__list
 			display: block
 			overflow: hidden
 		&__item
 			margin: 0 !important
+			height: auto
 
 
 	.slick-list

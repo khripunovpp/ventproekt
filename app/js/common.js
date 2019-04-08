@@ -55,9 +55,9 @@ var placesSlider = function() {
 
     // reslick only if it's not slick()
     $(window).on('resize', function() {
-        if ($(window).width() > 991) _unslick()
-
-        if (!slider.hasClass('slick-initialized')) {
+        if ($(window).width() > 991) {
+            _unslick()
+        } else if (!slider.hasClass('slick-initialized')) {
             return slider.slick(settings);
         }
     });
@@ -66,7 +66,6 @@ var placesSlider = function() {
         if (slider.hasClass('slick-initialized')) {
             slider.slick('unslick');
         }
-        return
     }
 }
 
@@ -79,13 +78,8 @@ var picsSlider = function() {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        infinite: false,
-        responsive: [{
-            breakpoint: 1131,
-            settings: {
-                dots: true
-            }
-        }]
+        adaptiveHeight: true,
+        infinite: false
     }
 
     slider.slick(settings);
@@ -94,9 +88,9 @@ var picsSlider = function() {
 
     // reslick only if it's not slick()
     $(window).on('resize', function() {
-        if ($(window).width() > 991) _unslick()
-
-        if (!slider.hasClass('slick-initialized')) {
+        if ($(window).width() > 991) {
+            _unslick()
+        } else if (!slider.hasClass('slick-initialized')) {
             return slider.slick(settings);
         }
     });
@@ -105,8 +99,17 @@ var picsSlider = function() {
         if (slider.hasClass('slick-initialized')) {
             slider.slick('unslick');
         }
-        return
     }
+
+    $('.places__item').on('click', function(event) {
+        event.preventDefault();
+        $('.modal').fadeIn(400);
+    });
+
+     $('.modal__close').on('click', function(event) {
+        event.preventDefault();
+        $(this).closest('.modal').fadeOut();
+    });
 }
 
 
@@ -163,6 +166,61 @@ var smooth = function() {
     });
 }
 
+var sendForm = function(btn) {
+    $(btn).on('click', function(event) {
+        event.preventDefault();
+        var form = $(this).closest('form');
+        ajax(form);
+    });
+}
+
+var ajax = function(form) {
+
+    var formtarget = form,
+        msg = $(formtarget).serialize(),
+        jqxhr = $.post("/ajax.php", msg, onAjaxSuccess);
+
+    function onAjaxSuccess(data) {
+
+        var json = JSON.parse(data),
+            status = json.status,
+            message = json.message,
+            formid = json.form;
+
+        if (status === 'success') {
+            $('input, textarea, button[type=submit]').each(function() {
+                $(this).prop("disabled", "true");
+            });
+
+        }
+
+        addNotify(status, message, formid)
+
+    }
+
+    var addNotify = function(status, msg, form) {
+        var popup = $('.response');
+
+        popup.find('.response__text').text(msg)
+
+        if (status === 'error') {
+            popup.find('.response__title').text('Что-то пошло не так!')
+
+        } else {
+            popup.find('.response__title').text('Ваша заявка принята')
+            yaCounter53182684.reachGoal('zayavka');
+        }
+
+        $('.response').fadeIn();
+        $('.modal').fadeOut();
+        $('.popup').fadeOut();
+
+        setTimeout(function() {
+            $('.response').fadeOut();
+        }, 2000)
+    }
+
+}
 
 $(function() {
     pricelistSlider()
@@ -171,4 +229,5 @@ $(function() {
     placesSlider()
     picsSlider()
     smooth()
+    sendForm('.js-submit')
 });
