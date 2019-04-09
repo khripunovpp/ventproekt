@@ -5,7 +5,7 @@ $form = htmlspecialchars($_POST["form"]);
 
 if (!empty($tell)) {
 
-	$to = 'khripunovpp@gmail.com, mskkonoval@gmail.com ';
+	$to = 'khripunovpp@gmail.com, mskkonoval@gmail.com';
 	$subject = 'Системы вентиляции';
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; utf-8' . "\r\n";
