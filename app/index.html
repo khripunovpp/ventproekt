@@ -37,20 +37,22 @@
         <div class="header__top">
           <div class="header__inner">
             <div class="header__logo"><img class="logo" src="img/logo.png" alt=""></div>
-            <div class="header__middle"><span class="bage bage--invert">Гарантия до 5 лет</span>
+            <div class="header__middle"><span class="bage bage--invert js-modal">Гарантия до 5 лет</span>
               <button class="bage js-modal">Позвоните мне</button>
             </div>
             <div class="header__phone">
-              <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a></div>
+              <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a><a class="hide-on-mobile" href="tel:88002229416">8 (800) 222-94-16</a></div>
             </div>
           </div>
         </div>
-        <div class="header__nav">
-          <button class="header__burger js-menuToggle"></button>
-          <div class="menu">
-            <nav class="menu__list"><a class="menu__item" href="#seo">О компании</a><a class="menu__item" href="#reasons">Преимущества</a><a class="menu__item" href="#clients">Наши клиенты</a><a class="menu__item menu__item--highlight" href="#pricelist">Цены</a><a class="menu__item menu__item--highlight" href="#pics">Наши работы</a><a class="menu__item menu__item--highlight" href="#contacts">Контакты</a></nav>
-            <div class="menu__footer"><span class="bage bage--invert">Гарантия до 5 лет</span>
-              <button class="bage js-modal">Позвоните мне</button>
+        <div class="header__bottom">
+          <div class="header__nav">
+            <button class="header__burger js-menuToggle"></button>
+            <div class="menu">
+              <nav class="menu__list"><a class="menu__item" href="#seo">О компании</a><a class="menu__item" href="#reasons">Преимущества</a><a class="menu__item" href="#clients">Наши клиенты</a><a class="menu__item menu__item--highlight" href="#pricelist">Цены</a><a class="menu__item menu__item--highlight" href="#pics">Наши работы</a><a class="menu__item menu__item--highlight" href="#contacts">Контакты</a></nav>
+              <div class="menu__footer"><span class="bage bage--invert js-modal">Гарантия до 5 лет</span>
+                <button class="bage js-modal">Позвоните мне</button>
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +65,8 @@
               <p class="hero__subtitle">Гарантия до 5 лет на монтаж и обслуживание<br> всех инженерных систем.</p>
               <p class="hero__price">Цены на услуги <strong>от 350 &#8381;/м2</strong></p>
               <div class="hero__footer">
-                <button class="hero__button btn js-modal">Заказать</button><a class="hero__phone" href="tel:+74953749832">+7 (495) 374-98-32</a>
+                <button class="hero__button btn js-modal">Заказать</button>
+                <div class="hero__phones"><a class="hero__phone" href="tel:+74953749832">+7 (495) 374-98-32</a></div>
               </div>
             </div>
             <div class="hero__right">
@@ -73,6 +76,7 @@
                 <form class="form" id="order_form" action="" method="post">
                   <p class="form__title">закажи выезд инженера для оценки стоимости</p>
                   <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+                  <input type="hidden" name="form" value="hero">
                   <button class="form__btn btn js-submit">Отправить</button>
                 </form>
               </div>
@@ -281,6 +285,7 @@
                   <p class="pricelist__step"><i>2</i> Выезд в день обращения</p>
                   <p class="form__title">закажи выезд инженера для оценки стоимости</p>
                   <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+                  <input type="hidden" name="form" value="pricelist">
                   <button class="form__btn btn js-submit">Отправить</button>
                 </form>
               </div>
@@ -294,6 +299,7 @@
             <p class="promo__text">Узнайте стоимость<br> монтажа</p>
             <form class="promo__form">
               <input class="promo__field" type="tel" placeholder="Телефон" required name="phone">
+              <input type="hidden" name="form" value="pricelist">
               <button class="promo__btn js-submit">Узнать</button>
             </form>
           </div>
@@ -305,15 +311,15 @@
             <h2 class="pics__title">Наши работы</h2>
             <div class="pics__slider">
               <div class="pics__list">
-                <div class="pics__item"><img src="img/pic-1.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-2.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-3.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-4.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-5.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-6.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-7.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-8.jpg" alt=""></div>
-                <div class="pics__item"><img src="img/pic-9.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-1.jpg"><img src="img/pic-1.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-2.jpg"><img src="img/pic-2.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-3.jpg"><img src="img/pic-3.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-4.jpg"><img src="img/pic-4.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-5.jpg"><img src="img/pic-5.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-6.jpg"><img src="img/pic-6.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-7.jpg"><img src="img/pic-7.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-8.jpg"><img src="img/pic-8.jpg" alt=""></div>
+                <div class="pics__item" data-src="img/pic-9.jpg"><img src="img/pic-9.jpg" alt=""></div>
               </div>
             </div>
           </div>
@@ -325,6 +331,7 @@
             <p class="call__text">Убедитесь в нашей<br> экспертности лично</p>
             <form class="call__form">
               <input class="call__field" type="tel" placeholder="Телефон" required name="phone">
+              <input type="hidden" name="form" value="afterGallery">
               <button class="call__btn js-submit">Узнать</button>
             </form>
           </div>
@@ -335,7 +342,7 @@
           <div class="scheme__inner">
             <h2 class="scheme__title">Рабочий алгоритм</h2>
             <ul class="scheme__list">
-              <li class="scheme__item"><strong>1</strong> Вы связываетесь с нами по телефону 8-495-374-98-32</li>
+              <li class="scheme__item"><strong>1</strong> Вы связываетесь с нами по телефону +7(495)374-98-32</li>
               <li class="scheme__item"><strong>2</strong> Наши специалисты выезжают к Вам на объекты</li>
               <li class="scheme__item"><strong>3</strong> Согласовываем условия выполнения работ</li>
               <li class="scheme__item"><strong>4</strong> Заключаем с Вами договор</li>
@@ -351,6 +358,7 @@
             <p class="questions__text"><strong>Остались вопросы?</strong> Позвоните нам и мы ответим<br> на все ваши вопросы</p>
             <form class="questions__form">
               <input class="questions__field" type="tel" placeholder="Телефон" required name="phone">
+              <input type="hidden" name="form" value="beforeClients">
               <button class="questions__btn js-submit">Узнать</button>
             </form>
           </div>
@@ -405,6 +413,7 @@
             <form class="form" id="order_form" action="" method="post">
               <p class="form__title">закажи выезд инженера для оценки стоимости</p>
               <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+              <input type="hidden" name="form" value="contactsMobile">
               <button class="form__btn btn js-submit">Перезвоните мне</button>
             </form>
           </div>
@@ -413,6 +422,7 @@
               <h2 class="contacts__title">Контакты</h2>
               <p class="contacts__item">Россия, Москва, Малая Юшуньская улица, 1, корп. 2</p>
               <p class="contacts__item">Телефон: <a href="tel:+74953749832">+7 (495) 374-98-32</a></p>
+              <p class="contacts__item">Телефон: <a href="tel:88002229416">8 (800) 222-94-16</a></p>
               <p class="contacts__item">Почта: info@ventproekt.ru</p>
             </div>
             <div class="contacts__right">
@@ -425,7 +435,9 @@
         <div class="container">
           <div class="footer__inner">
             <div class="footer__left"><img class="logo" src="img/logo-2.png" alt=""></div>
-            <div class="footer__middle"><span class="bage">Гарантия до 5 лет</span></div>
+            <div class="footer__middle"><span class="bage js-modal">Гарантия до 5 лет</span>
+              <button class="bage bage--invert js-modal">Позвоните мне</button>
+            </div>
             <div class="footer__right">
               <div class="phone">Без выходных<a href="tel:+74953749832">+7 (495) 374-98-32</a></div>
             </div>
@@ -442,6 +454,7 @@
                   <form class="form" id="order_form" action="" method="post">
                     <p class="form__title">Оставьте номер вашего телефона и мы вам перезвоним</p>
                     <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+                    <input type="hidden" name="form" value="popup">
                     <button class="form__btn btn js-submit">Перезвоните мне</button>
                   </form>
                 </div>
@@ -462,6 +475,7 @@
                     <p class="modal__step"><i>2</i> Выезд в день обращения</p>
                     <p class="form__title">Оставьте номер вашего телефона и мы вам перезвоним</p>
                     <input class="form__field" type="tel" name="phone" placeholder="Ваше телефон" required>
+                    <input type="hidden" name="form" value="places">
                     <button class="form__btn btn js-submit">Перезвоните мне</button>
                   </form>
                 </div>
@@ -486,6 +500,8 @@
         </table>
       </div>
     </div>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/lightgallery.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/common.js"></script>
   </body>

@@ -39,24 +39,26 @@ html
 						.header__logo
 							img.logo(src="img/logo.png", alt="")
 						.header__middle
-							span.bage.bage--invert Гарантия до 5 лет
+							span.bage.bage--invert.js-modal Гарантия до 5 лет
 							button.bage.js-modal Позвоните мне
 						.header__phone
 							.phone Без выходных
 								a(href="tel:+74953749832") +7 (495) 374-98-32
-				.header__nav
-					button.header__burger.js-menuToggle
-					.menu
-						nav.menu__list
-							a.menu__item(href="#seo") О компании
-							a.menu__item(href="#reasons") Преимущества
-							a.menu__item(href="#clients") Наши клиенты
-							a.menu__item.menu__item--highlight(href="#pricelist") Цены
-							a.menu__item.menu__item--highlight(href="#pics") Наши работы
-							a.menu__item.menu__item--highlight(href="#contacts") Контакты
-						.menu__footer
-							span.bage.bage--invert Гарантия до 5 лет
-							button.bage.js-modal Позвоните мне
+								a(href="tel:88002229416").hide-on-mobile 8 (800) 222-94-16
+				.header__bottom
+					.header__nav
+						button.header__burger.js-menuToggle
+						.menu
+							nav.menu__list
+								a.menu__item(href="#seo") О компании
+								a.menu__item(href="#reasons") Преимущества
+								a.menu__item(href="#clients") Наши клиенты
+								a.menu__item.menu__item--highlight(href="#pricelist") Цены
+								a.menu__item.menu__item--highlight(href="#pics") Наши работы
+								a.menu__item.menu__item--highlight(href="#contacts") Контакты
+							.menu__footer
+								span.bage.bage--invert.js-modal Гарантия до 5 лет
+								button.bage.js-modal Позвоните мне
 
 
 			section.hero
@@ -68,7 +70,8 @@ html
 							p.hero__price Цены на услуги #[strong от 350 &#8381;/м2]
 							.hero__footer
 								button.hero__button.btn.js-modal Заказать
-								a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
+								.hero__phones
+									a.hero__phone(href="tel:+74953749832") +7 (495) 374-98-32
 						.hero__right
 							p.hero__step #[i 1] Сделаем проект#[br] БЕСПЛАТНО
 							p.hero__step #[i 2] Выезд в день обращения
@@ -76,6 +79,7 @@ html
 								form.form#order_form(action="", method="post")
 									p.form__title закажи выезд инженера для оценки стоимости
 									input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+									input(type="hidden", name="form", value="hero")
 									button.form__btn.btn.js-submit Отправить
 
 
@@ -241,6 +245,7 @@ html
 									p.pricelist__step #[i 2] Выезд в день обращения
 									p.form__title закажи выезд инженера для оценки стоимости
 									input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+									input(type="hidden", name="form", value="pricelist")
 									button.form__btn.btn.js-submit Отправить
 
 			
@@ -250,6 +255,7 @@ html
 						p.promo__text Узнайте стоимость#[br] монтажа
 						form.promo__form
 							input.promo__field(type="tel", placeholder="Телефон", required, name="phone")
+							input(type="hidden", name="form", value="pricelist")
 							button.promo__btn.js-submit Узнать
 
 
@@ -259,23 +265,23 @@ html
 						h2.pics__title Наши работы
 						.pics__slider
 							.pics__list
-								.pics__item
+								.pics__item(data-src="img/pic-1.jpg")
 									img(src="img/pic-1.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-2.jpg")
 										img(src="img/pic-2.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-3.jpg")
 									img(src="img/pic-3.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-4.jpg")
 									img(src="img/pic-4.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-5.jpg")
 									img(src="img/pic-5.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-6.jpg")
 									img(src="img/pic-6.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-7.jpg")
 									img(src="img/pic-7.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-8.jpg")
 									img(src="img/pic-8.jpg", alt="")
-								.pics__item
+								.pics__item(data-src="img/pic-9.jpg")
 									img(src="img/pic-9.jpg", alt="")
 
 			section.call
@@ -284,6 +290,7 @@ html
 						p.call__text Убедитесь в нашей#[br] экспертности лично
 						form.call__form
 							input.call__field(type="tel", placeholder="Телефон", required, name="phone")
+							input(type="hidden", name="form", value="afterGallery")
 							button.call__btn.js-submit Узнать
 
 			section.scheme
@@ -291,7 +298,7 @@ html
 					.scheme__inner
 						h2.scheme__title Рабочий алгоритм
 						ul.scheme__list
-							li.scheme__item #[strong 1] Вы связываетесь с нами по телефону 8-495-374-98-32
+							li.scheme__item #[strong 1] Вы связываетесь с нами по телефону +7(495)374-98-32
 							li.scheme__item #[strong 2] Наши специалисты выезжают к Вам на объекты
 							li.scheme__item #[strong 3] Согласовываем условия выполнения работ
 							li.scheme__item #[strong 4] Заключаем с Вами договор
@@ -304,6 +311,7 @@ html
 						p.questions__text #[strong Остались вопросы?] Позвоните нам и мы ответим#[br] на все ваши вопросы
 						form.questions__form
 							input.questions__field(type="tel", placeholder="Телефон", required, name="phone")
+							input(type="hidden", name="form", value="beforeClients")
 							button.questions__btn.js-submit Узнать
 
 
@@ -357,12 +365,14 @@ html
 						form.form#order_form(action="", method="post")
 							p.form__title закажи выезд инженера для оценки стоимости
 							input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+							input(type="hidden", name="form", value="contactsMobile")
 							button.form__btn.btn.js-submit Перезвоните мне
 					.contacts__inner
 						.contacts__left
 							h2.contacts__title Контакты
 							p.contacts__item Россия, Москва, Малая Юшуньская улица, 1, корп. 2
 							p.contacts__item Телефон: #[a(href="tel:+74953749832") +7 (495) 374-98-32]
+							p.contacts__item Телефон: #[a(href="tel:88002229416") 8 (800) 222-94-16]
 							p.contacts__item Почта: info@ventproekt.ru
 						.contacts__right
 							iframe(src='https://yandex.ru/map-widget/v1/-/CCBubOOZ?width=100%', frameborder='1', allowfullscreen='true').contacts__map
@@ -373,7 +383,8 @@ html
 						.footer__left
 							img.logo(src="img/logo-2.png", alt="")
 						.footer__middle
-							span.bage Гарантия до 5 лет
+							span.bage.js-modal Гарантия до 5 лет
+							button.bage.bage--invert.js-modal Позвоните мне
 						.footer__right
 							.phone Без выходных
 								a(href="tel:+74953749832") +7 (495) 374-98-32
@@ -388,6 +399,7 @@ html
 									form.form#order_form(action="", method="post")
 										p.form__title Оставьте номер вашего телефона и мы вам перезвоним
 										input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+										input(type="hidden", name="form", value="popup")
 										button.form__btn.btn.js-submit Перезвоните мне
 
 			.modal
@@ -402,6 +414,7 @@ html
 										p.modal__step #[i 2] Выезд в день обращения
 										p.form__title Оставьте номер вашего телефона и мы вам перезвоним
 										input(type="tel", name="phone", placeholder="Ваше телефон", required).form__field
+										input(type="hidden", name="form", value="places")
 										button.form__btn.btn.js-submit Перезвоните мне
 
 			.response
@@ -415,5 +428,7 @@ html
 									p.response__text Спасибо за ваше доверие! В ближайшее время мы вам перезвоним.
 									
 
+		script(src="js/jquery.sticky.js")
+		script(src="js/lightgallery.min.js")
 		script(src="js/slick.min.js")
 		script(src="js/common.js")

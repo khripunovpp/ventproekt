@@ -21,6 +21,9 @@
 
 /* Desktop-frist */
 @media only screen and (max-width : 991px)
+	.hide-on-mobile
+		display: none !important
+
 	.container
 		max-width: 500px
 
@@ -136,7 +139,7 @@
 				margin-top: 8px
 		&__footer
 			margin-top: 20px
-		&__phone
+		&__phones
 			display: none
 		&__step
 			font-size: 16px
@@ -266,13 +269,15 @@
 			&-name
 				display: inline-block
 				vertical-align: middle
-				font-size: 16px
-				padding-right: 15px
+				font-size: 15px
+				padding-right: 10px
 			&-price
 				display: inline-block
 				vertical-align: middle
 				margin-top: 0
-				font-size: 20px
+				font-size: 17px
+				width: 120px
+				text-align: right
 
 	.promo
 		display: block

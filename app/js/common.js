@@ -82,6 +82,10 @@ var picsSlider = function() {
         infinite: false
     }
 
+    slider.lightGallery({
+        thumbnail: false
+    });
+
     slider.slick(settings);
 
     if ($(window).width() > 991) _unslick()
@@ -103,10 +107,12 @@ var picsSlider = function() {
 
     $('.places__item').on('click', function(event) {
         event.preventDefault();
-        $('.modal').fadeIn(400);
+        if ($(window).width() > 991) {
+            $('.modal').fadeIn(400);
+        }
     });
 
-     $('.modal__close').on('click', function(event) {
+    $('.modal__close').on('click', function(event) {
         event.preventDefault();
         $(this).closest('.modal').fadeOut();
     });
@@ -115,10 +121,12 @@ var picsSlider = function() {
 
 
 var menu = function() {
-    $('.js-menuToggle').click(function() {
-        $(this).toggleClass('open');
-        $('.menu').slideToggle()
-    });
+    $('.js-menuToggle').on('click', toggle);
+}
+
+var toggle = function() {
+    $('.js-menuToggle').toggleClass('open');
+    $('.menu').slideToggle().toggleClass('open');
 }
 
 
@@ -150,6 +158,8 @@ var smooth = function() {
             event.preventDefault();
 
             var hash = this.hash;
+
+            toggle()
 
             $('html, body').animate({
 
@@ -208,7 +218,7 @@ var ajax = function(form) {
 
         } else {
             popup.find('.response__title').text('Ваша заявка принята')
-            yaCounter53182684.reachGoal('zayavka');
+            yaCounter53182684.reachGoal(form);
         }
 
         $('.response').fadeIn();
@@ -222,6 +232,23 @@ var ajax = function(form) {
 
 }
 
+var sticky = function() {
+    r()
+
+    $(window).on('resize', r);
+    $(window).on('scroll', r);
+
+    function r() {
+        if ($(window).width() > 991) {
+            $('.header__bottom').sticky({ topSpacing: 0 });
+            $('.menu').removeAttr('style').removeClass('open')
+            $('.js-menuToggle').removeClass('open')
+        } else {
+            $('.header__bottom').unstick()
+        }
+    }
+}
+
 $(function() {
     pricelistSlider()
     menu()
@@ -230,4 +257,6 @@ $(function() {
     picsSlider()
     smooth()
     sendForm('.js-submit')
+
+    sticky()
 });

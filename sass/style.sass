@@ -2,6 +2,7 @@
 @import "icon.sass"
 @import "mixins"
 @import "slick-theme.css"
+@import "lightgallery.min.css"
 
 $font: 'Montserrat', sans-serif
 
@@ -161,6 +162,9 @@ select
 		@extend %container
 	&__burger
 		display: none
+	&__bottom
+		background-color: #fff
+		z-index: 6 !important
 
 .menu
 	&__footer
@@ -182,6 +186,8 @@ select
 			color: #3293ff
 		&:hover
 			text-decoration: underline
+	&.open
+		box-shadow: 0 2px 15px rgba(0,0,0,.1)
 
 
 .hero
@@ -228,12 +234,16 @@ select
 			margin-top: 15px
 	&__footer
 		margin-top: 55px
+	&__phones
+		display: inline-block
+		vertical-align: middle
 	&__phone
 		font-size: 28px
 		font-weight: 700
 		color: #14244d
 		text-decoration: none
 		margin-left: 30px
+		display: block
 	&__right
 		opacity: .99
 		padding: 0 40px
@@ -767,9 +777,6 @@ select
 		text-align: center
 	&__item
 		margin: 3%
-		filter: grayscale(1)
-		&:hover
-			filter: grayscale(0)
 
 
 .seo
@@ -1088,7 +1095,9 @@ select
 		img
 
 
-
+.is-sticky
+	.header__bottom
+		box-shadow: 0 2px 15px rgba(0,0,0,.1)
 
 
 //ALWAYS END

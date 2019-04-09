@@ -1,4 +1,5 @@
 @import url(slick-theme.css);
+@import url(lightgallery.min.css);
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?cwhh4a");
@@ -210,6 +211,11 @@ select {
   display: none;
 }
 
+.header__bottom {
+  background-color: #fff;
+  z-index: 6 !important;
+}
+
 .menu__footer {
   display: none;
 }
@@ -248,6 +254,11 @@ select {
 
 .menu__item:hover {
   text-decoration: underline;
+}
+
+.menu.open {
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
@@ -309,12 +320,18 @@ select {
   margin-top: 55px;
 }
 
+.hero__phones {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .hero__phone {
   font-size: 28px;
   font-weight: 700;
   color: #14244d;
   text-decoration: none;
   margin-left: 30px;
+  display: block;
 }
 
 .hero__right {
@@ -1104,13 +1121,6 @@ select {
 
 .clients__item {
   margin: 3%;
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-}
-
-.clients__item:hover {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
 }
 
 .seo {
@@ -1550,6 +1560,11 @@ select {
   margin-top: -157px;
 }
 
+.is-sticky .header__bottom {
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (max-width: 1150px) {
   .pics__list {
     display: block;
@@ -1569,6 +1584,9 @@ select {
 
 /* Desktop-frist */
 @media only screen and (max-width: 991px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
   .container {
     max-width: 500px;
   }
@@ -1708,7 +1726,7 @@ select {
   .hero__footer {
     margin-top: 20px;
   }
-  .hero__phone {
+  .hero__phones {
     display: none;
   }
   .hero__step {
@@ -1880,14 +1898,16 @@ select {
   .pricelist__prices-name {
     display: inline-block;
     vertical-align: middle;
-    font-size: 16px;
-    padding-right: 15px;
+    font-size: 15px;
+    padding-right: 10px;
   }
   .pricelist__prices-price {
     display: inline-block;
     vertical-align: middle;
     margin-top: 0;
-    font-size: 20px;
+    font-size: 17px;
+    width: 120px;
+    text-align: right;
   }
   .promo {
     display: block;
